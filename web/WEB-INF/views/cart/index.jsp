@@ -175,10 +175,10 @@
     <div class="checkout">
         <ul>
             <li class="subtotal">subtotal
-                <span>${cart.total} VNĐ</span>
+                <span><fmt:formatNumber value="${cart.total}" pattern="$ #,##0.00" /></span>
             </li>
             <li class="cart-total">Total
-                <span>${cart.total} VNĐ</span></li>
+                <span><fmt:formatNumber value="${cart.total}" pattern="$ #,##0.00" /></span></li>
         </ul>
         <a href="${pageContext.request.contextPath}/payment/index.do?cartID=${cart.cartID}"class="proceed-btn" style="text-decoration: none">Proceed to Checkout</a>
     </div>

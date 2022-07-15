@@ -82,7 +82,7 @@
                     <div class="col-5 text-center">
 
                         <div class="image-preview" id="imagePreview" style="margin-right: auto; margin-left: auto;">
-                            <img src="" alt="Image Preview" class="image-preview__image" style="max-height: 300px; width: 100%;">
+                            <img src="${pageContext.request.contextPath}/images/book/19.jpg" alt="Image Preview" class="image-preview__image" style="max-height: 300px; width: 100%;">
                             <span class="image-preview__default-text">Image Preview</span>
                         </div>
                         <input type="file" class="form-control mt-2" aria-describedly="bookImage" name="bookImage" id="productImage">

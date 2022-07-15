@@ -101,13 +101,18 @@
                     </div>
                     <div class="d-flex flex-column b-bottom">
                         <div class="d-flex justify-content-between py-3"> <small class="text-muted">Order Summary</small>
-                            <p>${paymentTotal==null?cart.total:paymentTotal} VNĐ</p>
+                            <p> 
+                                <fmt:formatNumber value="${paymentTotal==null?cart.total:paymentTotal}" pattern="$ #,##0.00" />
+                            </p>
                         </div>
                         <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Additional Service</small>
-                            <p>10.000 VNĐ</p>
+                            <p>5$</p>
                         </div>
                         <div class="d-flex justify-content-between"> <small class="text-muted">Total Amount</small>
-                            <p>${paymentTotal==null?cart.total+10000:paymentTotal+10000} VNĐ</p>
+                            <!--<p>${paymentTotal==null?cart.total+10000:paymentTotal+10000} VNĐ-->
+                            <p>
+                                <fmt:formatNumber value="${paymentTotal==null?cart.total+10000:paymentTotal+10000}" pattern="$ #,##0.00" />
+                            </p>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-outline-success mt-2 mb-2" name="op" value="createPayment"> <i class="bi bi-paypal"></i> Pay </button> 
@@ -150,7 +155,7 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <h6 class="mt-4">${order.bookID.price} VNĐ</h6>
+                                                        <h6 class="mt-4"><fmt:formatNumber value="${order.bookID.price}" pattern="$ #,##0.00" /></h6>
                                                     </td>
                                                     <td class="cart-product-quantity">
                                                         ${order.quantity}
@@ -159,7 +164,7 @@
                                                         <h6 class="mt-4">${order.bookID.discount}%</h6>
                                                     </td>
                                                     <td>
-                                                        <h6 class="mt-4">${order.total}</h6>
+                                                        <h6 class="mt-4"><fmt:formatNumber value="${order.total}" pattern="$ #,##0.00" /> </h6>
                                                     </td>
                                                 </tr>
                                                 <!----->
